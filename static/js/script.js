@@ -48,7 +48,7 @@ contacts.forEach(elem => {
 // Кнопка card
 document.querySelectorAll('.card__button').forEach(button => {
     button.addEventListener('click', () => {
-        document.querySelectorAll('.quanitiy__input').forEach(input => {
+        document.querySelectorAll('.quantity__input').forEach(input => {
             if (!(Number(input.value) < 1)) {
                 if (input.parentNode.parentNode.nextSibling.nextSibling === button) {
                     if (button.innerHTML === "Заказать") {
