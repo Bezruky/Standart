@@ -77,26 +77,5 @@ document.querySelectorAll('.card__button').forEach(button => {
                 // }, 1000)
             }
         })
-
-        // если в input не 0, то идём дальше, иначе мб какое то событие на пару секунд
-
     })
 })
-//const cardInput =
-//disabled: false
-//readOnly: false
-//defaultValue: "0"
-//value: "0"
-
-
-document.querySelectorAll('.quanitiy__input').forEach(input => {
-    console.log(input)
-})
-
-
-// function inputCheck() {
-//     document.querySelectorAll('.quanitiy__input').forEach(input => {
-//         return console.log(input)
-//     })
-// }
-
