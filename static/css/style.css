@@ -980,6 +980,39 @@ video::-webkit-media-controls {
   }
 }
 
+.partners__content {
+  padding: 80px 0 84px;
+}
+@media screen and (max-width: 768px) {
+  .partners__content {
+    padding: 10% 0 0;
+  }
+}
+
+.partners__title {
+  margin-bottom: 74px;
+}
+@media screen and (max-width: 768px) {
+  .partners__title {
+    margin-bottom: 9%;
+  }
+}
+
+.partners__logo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.partners__logo-item {
+  padding: 25px 65px;
+  max-width: 400px;
+  width: 100%;
+}
+.partners__logo-item img {
+  width: 100%;
+}
+
 /* Burger */
 @media screen and (max-width: 768px) {
   body.lock {
