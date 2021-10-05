@@ -49,7 +49,7 @@ contacts.forEach(elem => {
 document.querySelectorAll('.card__button').forEach(button => {
     button.addEventListener('click', () => {
         document.querySelectorAll('.quanitiy__input').forEach(input => {
-            if (!(input.value === "0")) {
+            if (!(Number(input.value) < 1)) {
                 if (input.parentNode.parentNode.nextSibling.nextSibling === button) {
                     if (button.innerHTML === "Заказать") {
                         button.innerHTML = "Отменить"
@@ -79,3 +79,22 @@ document.querySelectorAll('.card__button').forEach(button => {
         })
     })
 })
+
+//Video
+const video = document.getElementsByTagName('video')[0]
+const videoEl = document.querySelector('.video__element')
+
+videoEl.addEventListener('click', function () {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+}, false)
+
+video.addEventListener('play', function () {
+    playBtn.innerHTML = "";
+}, false);
+video.addEventListener('pause', function () {
+    playBtn.innerHTML = "<img src='../static/img/video/Vector.svg' alt=''>";
+}, false)
