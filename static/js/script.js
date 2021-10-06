@@ -98,3 +98,8 @@ video.addEventListener('play', function () {
 video.addEventListener('pause', function () {
     playBtn.innerHTML = "<img src='../static/img/video/Vector.svg' alt=''>";
 }, false)
+
+//Map mask
+
+const mapMask = document.querySelector('.map__elem-mask')
+mapMask.addEventListener('click', () => mapMask.classList.add('active'))
