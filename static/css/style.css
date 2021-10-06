@@ -609,6 +609,7 @@ li {
   width: 100%;
   padding: 5px;
   text-align: center;
+  margin-bottom: 24px;
 }
 @media screen and (max-width: 425px) {
   .about__item {
@@ -1019,7 +1020,7 @@ video::-webkit-media-controls {
 }
 
 .partners__logo-item {
-  padding: 25px 65px;
+  padding: 35px;
   max-width: 400px;
   width: 100%;
   pointer-events: none;
@@ -1230,7 +1231,8 @@ video::-webkit-media-controls {
 }
 
 .footer__contact-address {
-  background: url("../img/icons/map-marker.svg") 0 6px no-repeat;
+  background: url("../img/icons/map-marker.svg") 0 3px no-repeat;
+  background-size: 17px;
   padding: 0 40px 0 20px;
 }
 @media screen and (max-width: 768px) {
@@ -1243,20 +1245,21 @@ video::-webkit-media-controls {
   display: block;
   font-weight: 600;
   padding: 0 0 0 27px;
-  background: url("../img/icons/phone.svg") 0 6px no-repeat;
+  background: url("../img/icons/phone.svg") 0 5px no-repeat;
+  background-size: 21px;
 }
 .footer__contact-phone a {
   color: #000000;
 }
 @media screen and (max-width: 768px) {
   .footer__contact-phone {
-    background: url("../img/icons/phone.svg") 0 3px no-repeat;
+    background: url("../img/icons/phone.svg") 0 4px no-repeat;
+    background-size: 16px;
   }
 }
 @media screen and (max-width: 425px) {
   .footer__contact-phone {
     padding: 0 15px 0 17px;
-    background: url("../img/icons/phone.svg") 0 3px no-repeat;
     background-size: 11px 11px;
   }
 }

@@ -67,14 +67,6 @@ document.querySelectorAll('.card__button').forEach(button => {
                         input.style.color = "#000000"
                     }
                 }
-            } else {
-                // button.style.boxShadow = '0px 5.10782px 11.4926px rgb(231 83 83 / 15%)'
-                // button.style.color = 'red'
-                // button.style.border = '1px solid rgb(231 83 83)'
-                // setTimeout(function () {
-                //     button.style.color = '#000000'
-                //     button.style.border = '1px solid #000000'
-                // }, 1000)
             }
         })
     })
@@ -100,6 +92,5 @@ video.addEventListener('pause', function () {
 }, false)
 
 //Map mask
-
 const mapMask = document.querySelector('.map__elem-mask')
 mapMask.addEventListener('click', () => mapMask.classList.add('active'))
