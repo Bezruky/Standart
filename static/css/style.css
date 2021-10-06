@@ -241,57 +241,60 @@ li {
   background: none;
 }
 
-.contact__address {
+.address-icon {
   padding: 0 40px 0 20px;
   background: url("../img/icons/map-marker.svg") 0 3px no-repeat;
 }
-.contact__address .address__city {
+.address-icon .address__city {
   position: relative;
 }
-.contact__address .address__list:hover {
+.address-icon .address__list:hover {
   text-decoration: underline;
 }
-.contact__address .address__list:active {
+.address-icon .address__list:active {
   color: #298601;
   text-decoration: none;
 }
 @media screen and (max-width: 1220px) {
-  .contact__address {
+  .address-icon {
     padding: 0 0 0 20px;
     font-size: calc(7px + 10 * (100vw - 320px) / 880);
   }
 }
 @media screen and (max-width: 768px) {
-  .contact__address {
+  .address-icon {
     background: none;
     padding: 0;
   }
 }
 
-.contact__phone {
+.phone-icon {
   position: relative;
   padding: 0 0 0 27px;
   background: url("../img/icons/phone.svg") 0 3px no-repeat;
 }
-.contact__phone .phone__number {
+.phone-icon .phone__number {
   position: relative;
 }
-.contact__phone .phone__form {
+.phone-icon .phone__number a {
+  color: #000000;
+}
+.phone-icon .phone__form {
   text-decoration: underline;
 }
-.contact__phone .phone__form:hover {
+.phone-icon .phone__form:hover {
   text-decoration: none;
 }
-.contact__phone .phone__form:active {
+.phone-icon .phone__form:active {
   color: #298601;
 }
 @media screen and (max-width: 1235px) {
-  .contact__phone {
+  .phone-icon {
     display: none;
   }
 }
 @media screen and (max-width: 768px) {
-  .contact__phone {
+  .phone-icon {
     display: block;
     background: none;
     padding: 0;
@@ -1137,7 +1140,7 @@ video::-webkit-media-controls {
 .map__content .map__elem .map__elem-mask {
   display: none;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .map__content .map__elem .map__elem-mask {
     display: block;
     position: absolute;
@@ -1186,6 +1189,75 @@ video::-webkit-media-controls {
 @media screen and (max-width: 768px) {
   .map__title {
     margin-bottom: calc(3px + 75 * (100vw - 320px) / 448);
+  }
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  padding: 60px 0;
+}
+@media screen and (max-width: 768px) {
+  .footer__content {
+    padding: 6% 0;
+  }
+}
+
+.footer__contact {
+  display: flex;
+  align-items: center;
+}
+
+.footer__logo {
+  display: inline-block;
+}
+@media screen and (max-width: 768px) {
+  .footer__logo {
+    max-width: 135px;
+  }
+}
+
+.footer__contact-address,
+.footer__contact-phone {
+  font-size: 24px;
+}
+@media screen and (max-width: 1024px) {
+  .footer__contact-address,
+.footer__contact-phone {
+    font-size: calc(14px + 10 * (100vw - 320px) / 704);
+  }
+}
+
+.footer__contact-address {
+  background: url("../img/icons/map-marker.svg") 0 6px no-repeat;
+  padding: 0 40px 0 20px;
+}
+@media screen and (max-width: 768px) {
+  .footer__contact-address {
+    display: none;
+  }
+}
+
+.footer__contact-phone {
+  display: block;
+  font-weight: 600;
+  padding: 0 0 0 27px;
+  background: url("../img/icons/phone.svg") 0 6px no-repeat;
+}
+.footer__contact-phone a {
+  color: #000000;
+}
+@media screen and (max-width: 768px) {
+  .footer__contact-phone {
+    background: url("../img/icons/phone.svg") 0 3px no-repeat;
+  }
+}
+@media screen and (max-width: 425px) {
+  .footer__contact-phone {
+    padding: 0 15px 0 17px;
+    background: url("../img/icons/phone.svg") 0 3px no-repeat;
+    background-size: 11px 11px;
   }
 }
 
