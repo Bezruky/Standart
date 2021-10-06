@@ -1128,6 +1128,24 @@ video::-webkit-media-controls {
   }
 }
 
+.map__content {
+  padding: 72px 0 0;
+}
+@media screen and (max-width: 768px) {
+  .map__content {
+    padding: 9% 0 0;
+  }
+}
+
+.map__title {
+  margin-bottom: 78px;
+}
+@media screen and (max-width: 768px) {
+  .map__title {
+    margin-bottom: calc(3px + 75 * (100vw - 320px) / 448);
+  }
+}
+
 /* Burger */
 @media screen and (max-width: 768px) {
   body.lock {
