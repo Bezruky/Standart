@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../static/css/style.css">
-  <title>Standart manufacture</title>
+  <title>Standart manufacture - {{ title }}</title>
 </head>
 <body>
 <header class="header">
@@ -35,6 +35,18 @@
         </ul>
       </div>
     </div>
+    <div class="popup">
+      <div class="popup__window">
+        <div class="popup__title title">Выберите город:</div>
+        <div class="popup__elements">
+          <li class="popup__elem"><a href="{{ url_for('index_msk') }}">Москва</a></li>
+          <li class="popup__elem"><a href="{{ url_for('index_vol') }}">Вологда</a></li>
+          <li class="popup__elem"><a href="{{ url_for('index_spb') }}">Санкт-Петербург</a></li>
+          <li class="popup__elem"><a href="{{ url_for('index_kns') }}">Краснодар</a></li>
+        </div>
+        <div class="popup__close"><img src="../static/img/icons/Vector.svg" alt=""></div>
+      </div>
+    </div>
   </div>
 </header>
 <main>
@@ -57,7 +69,8 @@
         <div class="advantages__items">
           <div class="advantages__items-col">
             <div class="advantages__item">
-              <div class="advantages__item-picture"><img src="../static/img/advantages/bodybuilding.svg" alt=""></div>
+              <div class="advantages__item-picture"><img src="../static/img/advantages/bodybuilding.svg"
+                                                         alt=""></div>
               <div class="advantages__item-content">
                 <div class="advantages__item-title">Высокая прочность,
                   жёсткость и надёжность
@@ -68,7 +81,8 @@
               </div>
             </div>
             <div class="advantages__item">
-              <div class="advantages__item-picture"><img src="../static/img/advantages/cycle.svg" alt=""></div>
+              <div class="advantages__item-picture"><img src="../static/img/advantages/cycle.svg" alt="">
+              </div>
               <div class="advantages__item-content">
                 <div class="advantages__item-title">Возможность многоразового
                   использования
@@ -81,17 +95,20 @@
           </div>
           <div class="advantages__items-col">
             <div class="advantages__item">
-              <div class="advantages__item-picture"><img src="../static/img/advantages/piggy.svg" alt=""></div>
+              <div class="advantages__item-picture"><img src="../static/img/advantages/piggy.svg" alt="">
+              </div>
               <div class="advantages__item-content">
                 <div class="advantages__item-title">Низкая стоимость</div>
-                <div class="advantages__item-text text">Цена конструкции относительна низка, так как:<br>
+                <div class="advantages__item-text text">Цена конструкции относительна низка, так
+                  как:<br>
                   • Вам не нужно использовать сварочный аппарат; <br>
                   • работу Вы можете сделать своими руками
                 </div>
               </div>
             </div>
             <div class="advantages__item">
-              <div class="advantages__item-picture"><img src="../static/img/advantages/montage.svg" alt=""></div>
+              <div class="advantages__item-picture"><img src="../static/img/advantages/montage.svg"
+                                                         alt=""></div>
               <div class="advantages__item-content">
                 <div class="advantages__item-title">Простота монтажа</div>
                 <div class="advantages__item-text text">Для выполнения работ Вам не требуется
@@ -229,7 +246,8 @@
         <div class="video__title title">наше производство</div>
         <div class="video__media">
           <video class="video__element" src="../static/img/video/video.mp4" muted></video>
-          <div class="video__button" id="playBtn"><img src="../static/img/video/Vector.svg" alt="Запустить"></div>
+          <div class="video__button" id="playBtn"><img src="../static/img/video/Vector.svg" alt="Запустить">
+          </div>
         </div>
       </div>
     </div>
@@ -273,8 +291,10 @@
       <div class="partners__content">
         <div class="partners__title title">НАШИ ПАРТНЕРЫ</div>
         <div class="partners__logo">
-          <div class="partners__logo-item"><img src="../static/img/partners/severstal.png" alt="Логотип"></div>
-          <div class="partners__logo-item"><img src="../static/img/partners/zavodteplic.png" alt="Логотип"></div>
+          <div class="partners__logo-item"><img src="../static/img/partners/severstal.png" alt="Логотип">
+          </div>
+          <div class="partners__logo-item"><img src="../static/img/partners/zavodteplic.png" alt="Логотип">
+          </div>
           <div class="partners__logo-item"><img src="../static/img/partners/gf1.png" alt="Логотип"></div>
         </div>
       </div>
@@ -289,9 +309,12 @@
             <div class="reviews__photo"><img src="../static/img/reviews/reviewer1.png" alt="Фото"></div>
             <div class="reviews__info">
               <div class="reviews__name">Михаил Викторович</div>
-              <div class="reviews__text text">Kрaб-сиcтeмa в тeчение нескoльких лeт заcлужилa выcoкую репутацию cpeди
-                дaчникoв и пpоизводителей тeплиц и дpугих малыx дачных сoopужений. Прoстaя и быстpая сбоpка, oтcутствие
-                свapки, оцинкованный кpепеж пoзволяют cоздaвать тeплицы, душeвые, веpcтaки, стeллaжи из крепежа за
+              <div class="reviews__text text">Kрaб-сиcтeмa в тeчение нескoльких лeт заcлужилa выcoкую
+                репутацию cpeди
+                дaчникoв и пpоизводителей тeплиц и дpугих малыx дачных сoopужений. Прoстaя и быстpая
+                сбоpка, oтcутствие
+                свapки, оцинкованный кpепеж пoзволяют cоздaвать тeплицы, душeвые, веpcтaки, стeллaжи из
+                крепежа за
                 минимальнoе время.
               </div>
             </div>
@@ -300,9 +323,12 @@
             <div class="reviews__photo"><img src="../static/img/reviews/reviewer2.png" alt="Фото"></div>
             <div class="reviews__info">
               <div class="reviews__name">Светлана Альбертовна</div>
-              <div class="reviews__text text">Kрaб-сиcтeмa в тeчение нескoльких лeт заcлужилa выcoкую репутацию cpeди
-                дaчникoв и пpоизводителей тeплиц и дpугих малыx дачных сoopужений. Прoстaя и быстpая сбоpка, oтcутствие
-                свapки, оцинкованный кpепеж пoзволяют cоздaвать тeплицы, душeвые, веpcтaки, стeллaжи из крепежа за
+              <div class="reviews__text text">Kрaб-сиcтeмa в тeчение нескoльких лeт заcлужилa выcoкую
+                репутацию cpeди
+                дaчникoв и пpоизводителей тeплиц и дpугих малыx дачных сoopужений. Прoстaя и быстpая
+                сбоpка, oтcутствие
+                свapки, оцинкованный кpепеж пoзволяют cоздaвать тeплицы, душeвые, веpcтaки, стeллaжи из
+                крепежа за
                 минимальнoе время.
               </div>
             </div>
@@ -311,9 +337,12 @@
             <div class="reviews__photo"><img src="../static/img/reviews/reviewer3.png" alt="Фото"></div>
             <div class="reviews__info">
               <div class="reviews__name">Андрей Олегович</div>
-              <div class="reviews__text text">Kрaб-сиcтeмa в тeчение нескoльких лeт заcлужилa выcoкую репутацию cpeди
-                дaчникoв и пpоизводителей тeплиц и дpугих малыx дачных сoopужений. Прoстaя и быстpая сбоpка, oтcутствие
-                свapки, оцинкованный кpепеж пoзволяют cоздaвать тeплицы, душeвые, веpcтaки, стeллaжи из крепежа за
+              <div class="reviews__text text">Kрaб-сиcтeмa в тeчение нескoльких лeт заcлужилa выcoкую
+                репутацию cpeди
+                дaчникoв и пpоизводителей тeплиц и дpугих малыx дачных сoopужений. Прoстaя и быстpая
+                сбоpка, oтcутствие
+                свapки, оцинкованный кpепеж пoзволяют cоздaвать тeплицы, душeвые, веpcтaки, стeллaжи из
+                крепежа за
                 минимальнoе время.
               </div>
             </div>

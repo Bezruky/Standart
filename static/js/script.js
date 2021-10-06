@@ -91,6 +91,28 @@ video.addEventListener('pause', function () {
     playBtn.innerHTML = "<img src='../static/img/video/Vector.svg' alt=''>";
 }, false)
 
+
 //Map mask
 const mapMask = document.querySelector('.map__elem-mask')
-mapMask.addEventListener('click', () => mapMask.classList.add('active'))
+mapMask.addEventListener('click', () => mapMask.classList.add('openPopup'))
+
+
+//Popup - мб организовать в ф-ии
+const popup = document.querySelector('.popup')
+const closePopup = document.querySelector('.popup__close')
+
+document.querySelector('.address__list').addEventListener('click', () => {
+    popup.classList.add('openPopup')
+})
+closePopup.addEventListener('click', () => {
+    popup.classList.remove('openPopup')
+})
+// Проверить в PyCharm - а зачем эта конструкция нужна???
+document.querySelectorAll('li.popup__elem a').forEach(elem => {
+    elem.addEventListener('click', () => {
+        popup.classList.remove('openPopup')
+    })
+})
+popup.addEventListener('click', elem => {
+    if (elem.target === popup) popup.classList.remove('openPopup')
+})

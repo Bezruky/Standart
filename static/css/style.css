@@ -1109,7 +1109,12 @@ video::-webkit-media-controls {
   font-weight: bold;
   text-align: center;
   margin-bottom: 31px;
-  font-size: calc(13px + 11 * (100vw - 320px) / 960);
+  font-size: 24px;
+}
+@media screen and (max-width: 1280px) {
+  .reviews__name {
+    font-size: calc(13px + 11 * (100vw - 320px) / 960);
+  }
 }
 @media screen and (max-width: 768px) {
   .reviews__name {
@@ -1261,6 +1266,105 @@ video::-webkit-media-controls {
   .footer__contact-phone {
     padding: 0 15px 0 17px;
     background-size: 11px 11px;
+  }
+}
+
+/* Popup */
+.popup {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.44);
+  overflow-y: auto;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup.openPopup {
+  opacity: 1;
+  z-index: 7;
+}
+
+.popup__window {
+  position: relative;
+  background-color: #FFFFFF;
+  max-width: 600px;
+  width: 100%;
+  padding: 80px 0 100px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(79, 79, 79, 0.14);
+  margin: 0 20px;
+}
+@media screen and (max-width: 768px) {
+  .popup__window {
+    max-width: 400px;
+    padding: 55px 0 60px;
+  }
+}
+
+.popup__title {
+  margin-bottom: 60px;
+}
+@media screen and (max-width: 425px) {
+  .popup__title {
+    margin-bottom: 40px;
+  }
+}
+
+.popup__elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.popup__elem {
+  position: relative;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+@media screen and (max-width: 425px) {
+  .popup__elem {
+    margin-bottom: 2rem;
+  }
+}
+.popup__elem:last-child {
+  margin-bottom: 0;
+}
+.popup__elem a {
+  color: #000000;
+}
+
+.popup__close {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.popup__close img {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .popup__close {
+    top: 7px;
+    right: 7px;
+    width: 15px;
+    height: 15px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .popup__close {
+    top: 7px;
+    right: 7px;
+    width: 10px;
+    height: 10px;
   }
 }
 
