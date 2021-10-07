@@ -98,7 +98,7 @@ video.addEventListener('pause', function () {
 
 //Map mask
 const mapMask = document.querySelector('.map__elem-mask')
-mapMask.addEventListener('click', () => mapMask.classList.add('openPopup'))
+mapMask.addEventListener('click', () => mapMask.classList.add('active'))
 
 
 //Popup

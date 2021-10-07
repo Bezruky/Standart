@@ -1295,11 +1295,12 @@ video::-webkit-media-controls {
 }
 
 .popup__window {
+  max-height: 80vh;
   position: relative;
   background-color: #FFFFFF;
   max-width: 600px;
   width: 100%;
-  padding: 80px 0 100px;
+  padding: 80px 0 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(79, 79, 79, 0.14);
   margin: 0 20px;
@@ -1308,7 +1309,7 @@ video::-webkit-media-controls {
 @media screen and (max-width: 768px) {
   .popup__window {
     max-width: 400px;
-    padding: 55px 0 60px;
+    padding: 55px 0 0px;
   }
 }
 
@@ -1324,6 +1325,8 @@ video::-webkit-media-controls {
 .popup__elements {
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
 .popup__elem {
@@ -1335,9 +1338,6 @@ video::-webkit-media-controls {
   .popup__elem {
     margin-bottom: 2rem;
   }
-}
-.popup__elem:last-child {
-  margin-bottom: 0;
 }
 .popup__elem a {
   color: #000000;
@@ -1351,6 +1351,8 @@ video::-webkit-media-controls {
 
 .popup__picture {
   max-width: 1000px;
+  width: 100%;
+  max-height: 80vh;
 }
 .popup__picture img {
   width: 100%;
