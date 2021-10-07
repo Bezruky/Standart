@@ -8,6 +8,7 @@ links.forEach(link => {
     })
 })
 
+
 // Burger
 const burger = document.querySelector('.burger')
 const menu = document.querySelector('.header__menu')
@@ -25,6 +26,7 @@ burger.addEventListener('click', () => {
         document.body.classList.remove('lock')
     }
 })
+
 link.forEach(elem => {
     elem.addEventListener('click', () => {
         if (burger.classList.contains('active')) {
@@ -44,6 +46,7 @@ contacts.forEach(elem => {
         }
     })
 })
+
 
 // Кнопка card
 document.querySelectorAll('.card__button').forEach(button => {
@@ -72,6 +75,7 @@ document.querySelectorAll('.card__button').forEach(button => {
     })
 })
 
+
 //Video
 const video = document.getElementsByTagName('video')[0]
 const videoEl = document.querySelector('.video__element')
@@ -97,22 +101,46 @@ const mapMask = document.querySelector('.map__elem-mask')
 mapMask.addEventListener('click', () => mapMask.classList.add('openPopup'))
 
 
-//Popup - мб организовать в ф-ии
-const popup = document.querySelector('.popup')
-const closePopup = document.querySelector('.popup__close')
+//Popup
+const popup = document.querySelectorAll('.popup')
+const closePopup = document.querySelectorAll('.popup__close')
+const header = document.querySelector('.header')
 
-document.querySelector('.address__list').addEventListener('click', () => {
-    popup.classList.add('openPopup')
-})
-closePopup.addEventListener('click', () => {
-    popup.classList.remove('openPopup')
-})
-// Проверить в PyCharm - а зачем эта конструкция нужна???
-document.querySelectorAll('li.popup__elem a').forEach(elem => {
-    elem.addEventListener('click', () => {
-        popup.classList.remove('openPopup')
+//Common
+popup.forEach(element => {
+
+    element.addEventListener('click', closeInner => {
+        if (closeInner.target === element) {
+          element.classList.replace('openPopup', 'closePopup')
+          header.style.zIndex = 10
+        }
+
+    })
+
+    closePopup.forEach(close => {
+        close.addEventListener('click', () => {
+            element.classList.replace('openPopup', 'closePopup')
+            header.style.zIndex = 10
+        })
     })
 })
-popup.addEventListener('click', elem => {
-    if (elem.target === popup) popup.classList.remove('openPopup')
+
+//Cities
+document.querySelector('.address__list').addEventListener('click', () => {
+    popup[0].classList.replace('closePopup', 'openPopup')
+})
+document.querySelectorAll('li.popup__elem a').forEach(elem => {
+    elem.addEventListener('click', () => {
+        popup[0].classList.replace('openPopup', 'closePopup')
+    })
+})
+
+//Products
+document.querySelectorAll('.card__picture img').forEach(picture => {
+    picture.addEventListener('click', elem => {
+        let copy = ".." + elem.target.src.split('Standart').pop()
+        popup[1].classList.replace('closePopup', 'openPopup')
+        header.style.zIndex = 4
+        popup[1].querySelector('.popup__picture img').setAttribute("src", copy)
+    })
 })
