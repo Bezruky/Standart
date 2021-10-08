@@ -1,14 +1,38 @@
 <main>
   <div class="main">
+    <div>{{ test }}</div>
+    <div>{{ test1 }}</div>
     <div class="container">
       <div class="main__content">
         <div class="main__title">Краб - система</div>
         <div class="main__subtitle">Для быстровозводимых каркасных конструкций</div>
-        <button class="main__button button">Получить консультацию</button>
+        <button class="main__button button phone__form">Получить консультацию</button>
       </div>
     </div>
     <div class="main__image image-background">
       <img src="../static/img/main/background.jpg" alt="Задний фон">
+    </div>
+    <div class="popup closePopup">
+      <div class="popup__window">
+        <form class="form__window popup__from" method="POST" action="#">
+          <div class="popup__title title">Заказать звонок:</div>
+          <div class="form__wrapper">
+            <div class="form__tel popup__from">
+              <input type="tel" placeholder="Номер телефона">
+              <div class="tel__icon"><img src="../static/img/icons/phone-form.svg" alt=""></div>
+            </div>
+            <button class="form__button button popup__from" type="submit">Отправить</button>
+            <div class="form__checkbox">
+              <label>
+                <input class="checkbox__input" type="checkbox">
+                <span class="checkbox__mask"></span>
+                <div class="checkbox__text">Соглашаюсь с <a href="#">условиями передачи данных</a></div>
+              </label>
+            </div>
+          </div>
+        </form>
+        <div class="popup__close"><img src="../static/img/icons/Vector.svg" alt=""></div>
+      </div>
     </div>
   </div>
   <div class="advantages">
@@ -104,7 +128,6 @@
               </div>
             {% endif %}
           {% endfor %}
-
 
         </div>
       </div>

@@ -48,7 +48,7 @@ contacts.forEach(elem => {
 })
 
 
-// Кнопка card
+// Кнопки card
 document.querySelectorAll('.card__button').forEach(button => {
     button.addEventListener('click', () => {
         document.querySelectorAll('.quantity__input').forEach(input => {
@@ -108,15 +108,12 @@ const header = document.querySelector('.header')
 
 //Common
 popup.forEach(element => {
-
     element.addEventListener('click', closeInner => {
         if (closeInner.target === element) {
-          element.classList.replace('openPopup', 'closePopup')
-          header.style.zIndex = 10
+            element.classList.replace('openPopup', 'closePopup')
+            header.style.zIndex = 10
         }
-
     })
-
     closePopup.forEach(close => {
         close.addEventListener('click', () => {
             element.classList.replace('openPopup', 'closePopup')
@@ -135,12 +132,29 @@ document.querySelectorAll('li.popup__elem a').forEach(elem => {
     })
 })
 
+//Call
+document.querySelectorAll('.phone__form').forEach(phone => {
+    phone.addEventListener('click', () => {
+        popup[1].classList.replace('closePopup', 'openPopup')
+        header.style.zIndex = 4
+    })
+})
+
 //Products
 document.querySelectorAll('.card__picture img').forEach(picture => {
     picture.addEventListener('click', elem => {
         let copy = "../static" + elem.target.src.split('static').pop()
-        popup[1].classList.replace('closePopup', 'openPopup')
+        popup[2].classList.replace('closePopup', 'openPopup')
         header.style.zIndex = 4
-        popup[1].querySelector('.popup__picture img').setAttribute("src", copy)
+        popup[2].querySelector('.popup__picture img').setAttribute("src", copy)
     })
 })
+
+
+//Optimization header city
+const city = document.querySelector('.address__city')
+if (city.textContent.length > 10) {
+    header.style.fontSize = '16px'
+    link.style.margin = '0 15px'
+    link.style.fontSize = '14px'
+}

@@ -183,7 +183,7 @@ li {
 }
 @media screen and (max-width: 1024px) {
   .logo {
-    max-width: 200px;
+    max-width: 190px;
     padding: 0 0 0 10px;
   }
 }
@@ -1240,6 +1240,8 @@ video::-webkit-media-controls {
   background: url("../img/icons/map-marker.svg") 0 3px no-repeat;
   background-size: 17px;
   padding: 0 40px 0 20px;
+  max-width: 500px;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .footer__contact-address {
@@ -1251,6 +1253,7 @@ video::-webkit-media-controls {
   display: block;
   font-weight: 600;
   padding: 0 0 0 27px;
+  min-width: 240px;
   background: url("../img/icons/phone.svg") 0 5px no-repeat;
   background-size: 21px;
 }
@@ -1261,6 +1264,7 @@ video::-webkit-media-controls {
   .footer__contact-phone {
     background: url("../img/icons/phone.svg") 0 4px no-repeat;
     background-size: 16px;
+    min-width: 0px;
   }
 }
 @media screen and (max-width: 425px) {
@@ -1384,6 +1388,11 @@ video::-webkit-media-controls {
     width: 10px;
     height: 10px;
   }
+}
+
+.popup__from {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
 /* Burger */
