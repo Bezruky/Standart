@@ -1,0 +1,12 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <div class="footer__logo logo"><img src="../static/img/logo.svg" alt="Логотип"></div>
+      <div class="footer__contact">
+        <div class="footer__contact-address address-icon"> {{ city.city_name }}, {{ street }}</div>
+        <div class="footer__contact-phone phone-icon"><a
+          href="tel:+{{ city.tel_num.replace('-', '') }}">{{ city.tel_num }}</a></div>
+      </div>
+    </div>
+  </div>
+</footer>

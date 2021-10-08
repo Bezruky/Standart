@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="container">
+    <div class="header__content">
+      <div class="burger">
+        <span></span>
+      </div>
+      <div class="header__logo logo">
+        <img src="../static/img/logo.svg" alt="Логотип">
+      </div>
+      <div class="header__menu">
+        <ul class="header__wrapper">
+          <li class="menu__link"><a href="#catalog">Каталог</a></li>
+          <li class="menu__link"><a href="#price">Расчет стоимости</a></li>
+          <li class="menu__link"><a href="#partners">Партнеры</a></li>
+          <li class="menu__link"><a href="#reviews">Отзывы</a></li>
+        </ul>
+        <ul class="header__contacts">
+          <li class="contact__address address-icon">
+            <div class="address__city">{{ city.city_name }}</div>
+            <button class="address__list">Все города</button>
+          </li>
+          <li class="contact__phone phone-icon">
+            <div class="phone__number"><a href="tel:+{{ city.tel_num.replace('-', '') }}">{{ city.tel_num }}</a></div>
+            <button class="phone__form">Заказать звонок</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="popup closePopup">
+      <div class="popup__window">
+        <div class="popup__title title">Выберите город:</div>
+        <div class="popup__elements">
+          <li class="popup__elem"><a href="{{ url_for('index_msk') }}">Москва</a></li>
+          <li class="popup__elem"><a href="{{ url_for('index_vol') }}">Вологда</a></li>
+          <li class="popup__elem"><a href="{{ url_for('index_spb') }}">Санкт-Петербург</a></li>
+          <li class="popup__elem"><a href="{{ url_for('index_kns') }}">Краснодар</a></li>
+        </div>
+        <div class="popup__close"><img src="../static/img/icons/Vector.svg" alt=""></div>
+      </div>
+    </div>
+  </div>
+</header>

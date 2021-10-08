@@ -138,7 +138,7 @@ document.querySelectorAll('li.popup__elem a').forEach(elem => {
 //Products
 document.querySelectorAll('.card__picture img').forEach(picture => {
     picture.addEventListener('click', elem => {
-        let copy = ".." + elem.target.src.split('Standart').pop()
+        let copy = "../static" + elem.target.src.split('static').pop()
         popup[1].classList.replace('closePopup', 'openPopup')
         header.style.zIndex = 4
         popup[1].querySelector('.popup__picture img').setAttribute("src", copy)

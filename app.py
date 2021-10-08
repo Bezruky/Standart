@@ -8,34 +8,46 @@ db = SQLAlchemy(app)
 
 from models import Cities, Products, Reviews
 
-# cities = Cities.query.all()
-# for p in cities:
-#     print(p.id, p.author.username, p.body)
+products = Products.query.all()
+reviews = Reviews.query.all()
 
 
 @app.route('/')
 @app.route('/msk')
 def index_msk():
-    return render_template('index.html', title = 'Москва')
+    city = Cities.query.get(1)
+    title = 'Москва'
+    street = 'ул. Ленинина, д. 25'
+    return render_template('base.html', title = title, products = products, reviews = reviews, city = city,
+                           street = street)
 
 
 @app.route('/vol')
 def index_vol():
-    return render_template('index.html', title = 'Вологда')
+    city = Cities.query.get(2)
+    title = 'Вологда'
+    street = 'Пошехонское ш., д. 20'
+    return render_template('base.html', title = title, products = products, reviews = reviews, city = city,
+                           street = street)
 
 
 @app.route('/spb')
 def index_spb():
-    return render_template('index.html', title = 'Санкт-Петербург')
+    city = Cities.query.get(3)
+    title = 'Санкт-Петербург'
+    street = 'ул.Касимовская, д.5 - Б'
+    return render_template('base.html', title = title, products = products, reviews = reviews, city = city,
+                           street = street)
 
 
 @app.route('/kns')
 def index_kns():
-    return render_template('index.html', title = 'Краснодар')
+    city = Cities.query.get(4)
+    title = 'Краснодар'
+    street = 'Карасунский внутригородской округ, ул. Бородинская, д. 156H'
+    return render_template('base.html', title = title, products = products, reviews = reviews, city = city,
+                           street = street)
 
-@app.errorhandler(404)
-def pageNotFound(error):
-    return render_template('base.html')
 
 if __name__ == '__main__':
     app.run()

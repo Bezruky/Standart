@@ -1,54 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/css/style.css">
-  <title>Standart manufacture - {{ title }}</title>
-</head>
-<body>
-<header class="header">
-  <div class="container">
-    <div class="header__content">
-      <div class="burger">
-        <span></span>
-      </div>
-      <div class="header__logo logo">
-        <img src="../static/img/logo.svg" alt="Логотип">
-      </div>
-      <div class="header__menu">
-        <ul class="header__wrapper">
-          <li class="menu__link"><a href="#catalog">Каталог</a></li>
-          <li class="menu__link"><a href="#price">Расчет стоимости</a></li>
-          <li class="menu__link"><a href="#partners">Партнеры</a></li>
-          <li class="menu__link"><a href="#reviews">Отзывы</a></li>
-        </ul>
-        <ul class="header__contacts">
-          <li class="contact__address address-icon">
-            <div class="address__city">Москва</div>
-            <button class="address__list">Все города</button>
-          </li>
-          <li class="contact__phone phone-icon">
-            <div class="phone__number"><a href="tel:+89853447646">8-985-344-76-46</a></div>
-            <button class="phone__form">Заказать звонок</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="popup closePopup">
-      <div class="popup__window">
-        <div class="popup__title title">Выберите город:</div>
-        <div class="popup__elements">
-          <li class="popup__elem"><a href="{{ url_for('index_msk') }}">Москва</a></li>
-          <li class="popup__elem"><a href="{{ url_for('index_vol') }}">Вологда</a></li>
-          <li class="popup__elem"><a href="{{ url_for('index_spb') }}">Санкт-Петербург</a></li>
-          <li class="popup__elem"><a href="{{ url_for('index_kns') }}">Краснодар</a></li>
-        </div>
-        <div class="popup__close"><img src="../static/img/icons/Vector.svg" alt=""></div>
-      </div>
-    </div>
-  </div>
-</header>
 <main>
   <div class="main">
     <div class="container">
@@ -134,62 +83,29 @@
       <div class="products__content">
         <div class="products__title title">ВСЕГДА В НАЛИЧИИ</div>
         <div class="products__cards">
-          <div class="card__item">
-            <div class="card__picture"><img src="../static/img/products/T-crab1.jpg" alt="Товар"></div>
-            <div class="card__info">
-              <div class="card__text text card-text">Т-образная краб-система 20х20</div>
-              <div class="card__price-and-quantity">
-                <div class="card__price">20 руб/комп</div>
-                <div class="card__quantity">
-                  <input class="quantity__input card-text" value="0" type="text">
-                  <div class="quantity__text card-text">комп.</div>
+
+          {% set count = [0] %}
+          {% for product in products %}
+            {% if product.flag %}
+              {% if count.append(count.pop() + 1) %}{% endif %}
+              <div class="card__item">
+                <div class="card__picture"><img src="../static/img/products/T-crab{{ count[0] }}.jpg" alt="Товар"></div>
+                <div class="card__info">
+                  <div class="card__text text card-text">{{ product.product_name }}</div>
+                  <div class="card__price-and-quantity">
+                    <div class="card__price">{{ product.price }} руб/комп</div>
+                    <div class="card__quantity">
+                      <input class="quantity__input card-text" value="0" type="text">
+                      <div class="quantity__text card-text">комп.</div>
+                    </div>
+                  </div>
+                  <button class="card__button card-text">Заказать</button>
                 </div>
               </div>
-              <button class="card__button card-text">Заказать</button>
-            </div>
-          </div>
-          <div class="card__item">
-            <div class="card__picture"><img src="../static/img/products/T-crab2.jpg" alt="Товар"></div>
-            <div class="card__info">
-              <div class="card__text text card-text">Х-образная краб-система 20х20</div>
-              <div class="card__price-and-quantity">
-                <div class="card__price">20 руб/комп</div>
-                <div class="card__quantity">
-                  <input class="quantity__input card-text" value="0" type="text">
-                  <div class="quantity__text card-text">комп.</div>
-                </div>
-              </div>
-              <button class="card__button card-text">Заказать</button>
-            </div>
-          </div>
-          <div class="card__item">
-            <div class="card__picture"><img src="../static/img/products/T-crab3.jpg" alt="Товар"></div>
-            <div class="card__info">
-              <div class="card__text text card-text">Т-образная краб-система 25х25</div>
-              <div class="card__price-and-quantity">
-                <div class="card__price">25 руб/комп</div>
-                <div class="card__quantity">
-                  <input class="quantity__input card-text" value="0" type="text">
-                  <div class="quantity__text card-text">комп.</div>
-                </div>
-              </div>
-              <button class="card__button card-text">Заказать</button>
-            </div>
-          </div>
-          <div class="card__item">
-            <div class="card__picture"><img src="../static/img/products/T-crab4.jpg" alt="Товар"></div>
-            <div class="card__info">
-              <div class="card__text text card-text">Х-образная краб-система 25х25</div>
-              <div class="card__price-and-quantity">
-                <div class="card__price">25 руб/комп</div>
-                <div class="card__quantity">
-                  <input class="quantity__input card-text" value="0" type="text">
-                  <div class="quantity__text card-text">комп.</div>
-                </div>
-              </div>
-              <button class="card__button card-text">Заказать</button>
-            </div>
-          </div>
+            {% endif %}
+          {% endfor %}
+
+
         </div>
       </div>
     </div>
@@ -312,48 +228,19 @@
       <div class="reviews__content">
         <div class="reviews__title title">отзывы клиентов</div>
         <div class="reviews__items">
-          <div class="reviews__item">
-            <div class="reviews__photo"><img src="../static/img/reviews/reviewer1.png" alt="Фото"></div>
-            <div class="reviews__info">
-              <div class="reviews__name">Михаил Викторович</div>
-              <div class="reviews__text text">Kрaб-сиcтeмa в тeчение нескoльких лeт заcлужилa выcoкую
-                репутацию cpeди
-                дaчникoв и пpоизводителей тeплиц и дpугих малыx дачных сoopужений. Прoстaя и быстpая
-                сбоpка, oтcутствие
-                свapки, оцинкованный кpепеж пoзволяют cоздaвать тeплицы, душeвые, веpcтaки, стeллaжи из
-                крепежа за
-                минимальнoе время.
+
+          {% for review in reviews %}
+            {% if review.flag %}
+              <div class="reviews__item">
+                <div class="reviews__photo"><img src="{{ review.photo }}" alt="Фото"></div>
+                <div class="reviews__info">
+                  <div class="reviews__name">{{ review.author_name }}</div>
+                  <div class="reviews__text text">{{ review.review_text }}</div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="reviews__item">
-            <div class="reviews__photo"><img src="../static/img/reviews/reviewer2.png" alt="Фото"></div>
-            <div class="reviews__info">
-              <div class="reviews__name">Светлана Альбертовна</div>
-              <div class="reviews__text text">Kрaб-сиcтeмa в тeчение нескoльких лeт заcлужилa выcoкую
-                репутацию cpeди
-                дaчникoв и пpоизводителей тeплиц и дpугих малыx дачных сoopужений. Прoстaя и быстpая
-                сбоpка, oтcутствие
-                свapки, оцинкованный кpепеж пoзволяют cоздaвать тeплицы, душeвые, веpcтaки, стeллaжи из
-                крепежа за
-                минимальнoе время.
-              </div>
-            </div>
-          </div>
-          <div class="reviews__item">
-            <div class="reviews__photo"><img src="../static/img/reviews/reviewer3.png" alt="Фото"></div>
-            <div class="reviews__info">
-              <div class="reviews__name">Андрей Олегович</div>
-              <div class="reviews__text text">Kрaб-сиcтeмa в тeчение нескoльких лeт заcлужилa выcoкую
-                репутацию cpeди
-                дaчникoв и пpоизводителей тeплиц и дpугих малыx дачных сoopужений. Прoстaя и быстpая
-                сбоpка, oтcутствие
-                свapки, оцинкованный кpепеж пoзволяют cоздaвать тeплицы, душeвые, веpcтaки, стeллaжи из
-                крепежа за
-                минимальнoе время.
-              </div>
-            </div>
-          </div>
+            {% endif %}
+          {% endfor %}
+
         </div>
       </div>
     </div>
@@ -377,17 +264,3 @@
     </div>
   </div>
 </main>
-<footer class="footer">
-  <div class="container">
-    <div class="footer__content">
-      <div class="footer__logo logo"><img src="../static/img/logo.svg" alt="Логотип"></div>
-      <div class="footer__contact">
-        <div class="footer__contact-address address-icon"> Москва, ул. Лениниа, д. 25</div>
-        <div class="footer__contact-phone phone-icon"><a href="tel:+89853447646">8-985-344-76-46</a></div>
-      </div>
-    </div>
-  </div>
-</footer>
-<script src="../static/js/script.js"></script>
-</body>
-</html>
