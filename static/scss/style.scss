@@ -1033,12 +1033,12 @@ video::-webkit-media-controls {
     }
   }
 
-  iframe {
+  #map {
     @media screen and (max-width: 768px) {
-      height: 400px;
+      height: 400px !important;
     }
     @media screen and (max-width: 425px) {
-      height: 203px;
+      height: 203px !important;
     }
   }
 

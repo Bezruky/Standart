@@ -57,7 +57,7 @@ def index_spb():
                            street = street)
 
 
-@app.route('/kns')
+@app.route('/krs')
 def index_kns():
     current_city()
     city = Cities.query.get(4)

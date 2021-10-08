@@ -11,6 +11,14 @@
 {% include 'main.html' %}
 {% include 'footer.html' %}
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-<script src="{{ url_for('static', filename='js/popup.js') }}"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=6e16697c-f9ff-4c05-99ac-960bb899bb6c&lang=ru_RU"
+        type="text/javascript"></script>
+
+<script>
+  let coords = {{ city.coords | tojson }}.split(',');
+  let street = '{{ street }}';
+  let phone = '{{ city.tel_num }}';
+</script>
+<script src="{{ url_for('static', filename='js/yaMap.js') }}"></script>
 </body>
 </html>

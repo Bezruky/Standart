@@ -1175,13 +1175,13 @@ video::-webkit-media-controls {
   display: none;
 }
 @media screen and (max-width: 768px) {
-  .map__content iframe {
-    height: 400px;
+  .map__content #map {
+    height: 400px !important;
   }
 }
 @media screen and (max-width: 425px) {
-  .map__content iframe {
-    height: 203px;
+  .map__content #map {
+    height: 203px !important;
   }
 }
 @media screen and (max-width: 768px) {
