@@ -1167,7 +1167,7 @@ video::-webkit-media-controls {
 }
 
 .footer__logo {
-  display: inline-block;
+  margin: auto 0;
 }
 @media screen and (max-width: 768px) {
   .footer__logo {
@@ -1189,7 +1189,7 @@ video::-webkit-media-controls {
 .footer__contact-address {
   background: url("../img/icons/map-marker.svg") 0 3px no-repeat;
   background-size: 17px;
-  padding: 0 40px 0 20px;
+  padding: 0 40px 0 25px;
   max-width: 500px;
   width: 100%;
 }

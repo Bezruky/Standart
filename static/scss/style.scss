@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans&family=Open+Sans:wght@400;700&display=swap');
-//font-family: 'Montserrat', sans-serif;
-//font-family: 'Noto Sans', sans-serif;
-//font-family: 'Open Sans', sans-serif;
-
 @import "default";
 
 .container {
@@ -466,9 +462,6 @@
   }
 }
 
-.about {
-}
-
 .about__content {
   padding: 80px 0;
   @media screen and (max-width: 768px) {
@@ -922,10 +915,6 @@ video::-webkit-media-controls {
   }
 }
 
-.reviews__info {
-
-}
-
 .reviews__name {
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
@@ -939,9 +928,6 @@ video::-webkit-media-controls {
     margin: 0 0 calc(5px + (31 - 5) * ((100vw - 320px) / (768 - 320))) 0;
     text-align: left;
   }
-}
-
-.reviews__text {
 }
 
 .map__content {
@@ -1020,7 +1006,7 @@ video::-webkit-media-controls {
 }
 
 .footer__logo {
-  display: inline-block;
+  margin: auto 0;
   @media screen and (max-width: 768px) {
     max-width: 135px;
   }
@@ -1038,7 +1024,7 @@ video::-webkit-media-controls {
 .footer__contact-address {
   background: url("../img/icons/map-marker.svg") 0 3px no-repeat;
   background-size: 17px;
-  padding: 0 40px 0 20px;
+  padding: 0 40px 0 25px;
   max-width: 500px;
   width: 100%;
   @media screen and (max-width: 768px) {
@@ -1258,4 +1244,3 @@ video::-webkit-media-controls {
     }
   }
 }
-
