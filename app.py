@@ -27,28 +27,28 @@ def index():
         return redirect(url_for('index_msk'))
 
 
-@app.route('/msk')
+@app.route('/msk/')
 def index_msk():
     current_city()
     city = Cities.query.get(1)
     return render_template('base.html', products = products, reviews = reviews, city = city)
 
 
-@app.route('/vol')
+@app.route('/vol/')
 def index_vol():
     current_city()
     city = Cities.query.get(2)
     return render_template('base.html', products = products, reviews = reviews, city = city)
 
 
-@app.route('/spb')
+@app.route('/spb/')
 def index_spb():
     current_city()
     city = Cities.query.get(3)
     return render_template('base.html', products = products, reviews = reviews, city = city)
 
 
-@app.route('/krs')
+@app.route('/krs/')
 def index_kns():
     current_city()
     city = Cities.query.get(4)
