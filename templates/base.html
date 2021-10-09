@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <title>Standart manufacture - {{ title }}</title>
+  <title>Standart manufacture - {{ city.city_name }}</title>
 </head>
 <body>
 {% include 'header.html' %}
@@ -16,7 +16,7 @@
 
 <script>
   let coords = {{ city.coords | tojson }}.split(',');
-  let street = '{{ street }}';
+  let street = '{{ city.address }}';
   let phone = '{{ city.tel_num }}';
 </script>
 <script src="{{ url_for('static', filename='js/yaMap.js') }}"></script>

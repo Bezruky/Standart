@@ -5,6 +5,7 @@ class Cities(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     city_name = db.Column(db.String(50))
     tel_num = db.Column(db.String(15))
+    address = db.Column(db.String(255))
     coords = db.Column(db.String(50))
     flag = db.Column(db.Boolean)
 

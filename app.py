@@ -31,40 +31,28 @@ def index():
 def index_msk():
     current_city()
     city = Cities.query.get(1)
-    title = 'Москва'
-    street = 'ул. Ленинина, д. 25'
-    return render_template('base.html', title = title, products = products, reviews = reviews, city = city,
-                           street = street)
+    return render_template('base.html', products = products, reviews = reviews, city = city)
 
 
 @app.route('/vol')
 def index_vol():
     current_city()
     city = Cities.query.get(2)
-    title = 'Вологда'
-    street = 'Пошехонское ш., д. 20'
-    return render_template('base.html', title = title, products = products, reviews = reviews, city = city,
-                           street = street)
+    return render_template('base.html', products = products, reviews = reviews, city = city)
 
 
 @app.route('/spb')
 def index_spb():
     current_city()
     city = Cities.query.get(3)
-    title = 'Санкт-Петербург'
-    street = 'ул.Касимовская, д.5 - Б'
-    return render_template('base.html', title = title, products = products, reviews = reviews, city = city,
-                           street = street)
+    return render_template('base.html', products = products, reviews = reviews, city = city)
 
 
 @app.route('/krs')
 def index_kns():
     current_city()
     city = Cities.query.get(4)
-    title = 'Краснодар'
-    street = 'Карасунский внутригородской округ, ул. Бородинская, д. 156H'
-    return render_template('base.html', title = title, products = products, reviews = reviews, city = city,
-                           street = street)
+    return render_template('base.html', products = products, reviews = reviews, city = city)
 
 
 if __name__ == '__main__':
