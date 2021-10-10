@@ -30,10 +30,9 @@
       <div class="popup__window">
         <div class="popup__title title">Выберите город:</div>
         <div class="popup__elements">
-          <li class="popup__elem"><a href="{{ url_for('index_msk') }}">Москва</a></li>
-          <li class="popup__elem"><a href="{{ url_for('index_vol') }}">Вологда</a></li>
-          <li class="popup__elem"><a href="{{ url_for('index_spb') }}">Санкт-Петербург</a></li>
-          <li class="popup__elem"><a href="{{ url_for('index_kns') }}">Краснодар</a></li>
+          {% for line in city_menu %}
+            <li class="popup__elem"><a href="/{{ line[1] }}">{{ line[0] }}</a></li>
+          {% endfor %}
         </div>
         <div class="popup__close"><img src="../static/img/icons/Vector.svg" alt=""></div>
       </div>

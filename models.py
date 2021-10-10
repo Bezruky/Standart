@@ -7,6 +7,7 @@ class Cities(db.Model):
     tel_num = db.Column(db.String(15))
     address = db.Column(db.String(255))
     coords = db.Column(db.String(50))
+    url = db.Column(db.String(20))
     flag = db.Column(db.Boolean)
 
     def __repr__(self):

@@ -10,6 +10,12 @@ from models import Cities, Products, Reviews
 
 products = Products.query.all()
 reviews = Reviews.query.all()
+city = Cities.query.all()
+
+city_menu = []
+for c in city:
+    if c.flag:
+        city_menu.append([c.city_name, c.url])
 
 
 def current_city():
@@ -24,35 +30,15 @@ def index():
     if 'cur-loc' in session:
         return redirect(session['cur-loc'])
     else:
-        return redirect(url_for('index_msk'))
+        return redirect('/' + city[0].url)
 
 
-@app.route('/msk/')
-def index_msk():
-    current_city()
-    city = Cities.query.get(1)
-    return render_template('base.html', products = products, reviews = reviews, city = city)
-
-
-@app.route('/vol/')
-def index_vol():
-    current_city()
-    city = Cities.query.get(2)
-    return render_template('base.html', products = products, reviews = reviews, city = city)
-
-
-@app.route('/spb/')
-def index_spb():
-    current_city()
-    city = Cities.query.get(3)
-    return render_template('base.html', products = products, reviews = reviews, city = city)
-
-
-@app.route('/krs/')
-def index_kns():
-    current_city()
-    city = Cities.query.get(4)
-    return render_template('base.html', products = products, reviews = reviews, city = city)
+@app.route('/<location>/')
+def index_city(location):
+    for c in city:
+        if location == c.url:
+            current_city()
+            return render_template('base.html', products = products, reviews = reviews, city_menu = city_menu, city = c)
 
 
 if __name__ == '__main__':
